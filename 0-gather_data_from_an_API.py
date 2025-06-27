@@ -6,10 +6,8 @@ import sys
 
 if __name__ == "__main__":
     employee_id = int(sys.argv[1])
-    employee_url = "https://jsonplaceholder\
-.typicode.com/users/{}".format(employee_id)
-    todo_url = "https://jsonplaceholder\
-.typicode.com/users/{}/todos".format(employee_id)
+    employee_url = "https://jsonplaceholder.typicode.com/users/{}".format(employee_id)
+    todo_url = "https://jsonplaceholder.typicode.com/users/{}/todos".format(employee_id)
 
     employee_data = requests.get(employee_url).json()
     employee_name = employee_data['name']
@@ -28,3 +26,4 @@ if __name__ == "__main__":
     for task in todo_data:
         if task['completed']:
             print("\t {}".format(task['title']))
+
